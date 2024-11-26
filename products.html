@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shazada - Laptops</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bootstrap 5.3/bootstrap-5.3.0-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/product.css">
+  </head>
+  <body>
+    <button onclick="topFunction()" id="topButton" title="Go to top">
+      <i class="icon solid fa-arrow-circle-up"></i>
+    </button>
+
+    <header>
+      <!-- Header -->
+      <div id="header-wrapper">
+        <header id="header" class="container">
+          <!-- Logo -->
+          <div id="logo">
+            <a href="index.html"><img src="images/shazadalogo.png" id="shazada-logo"></img></a>
+            <a href="index.html"><img src="images/shazada.png" id="shazada"></img></a>
+            <span>by K. V.</span>
+          </div>
+          <!-- Nav -->
+          <nav id="nav">
+            <ul>
+              <li><a href="index.html#">Homepage</a></li>
+              <li class="current"><a href="products.html">Products</a>
+                <ul>
+                  <li><a href="#officelaptops">School/Office Laptops</a></li>
+                  <li><a href="#gaminglaptops">Gaming Laptops</a></li>
+                  <li><a href="#workstationlaptops">Workstation Laptops</a></li>
+                </ul>
+              </li>
+              <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </header>
+
+    <!-- Cart -->
+
+    <button class="btn btn-primary" id="cart-button" type="button" data-bs-toggle="modal" data-bs-target="#cart">
+      <i class="icon solid fa-shopping-cart"></i>
+    </button>
+
+    <div class="modal fade" id="cart">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" style="text-align: center;">🛒 Shopping Cart</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="cart-body">
+            <div id="cart-page">
+              <table class="table cart-table">
+                <thead>
+                  <tr>
+                    <th class="product-column">Product</th>
+                    <th class="id-column">ID</th>
+                    <th class="quantity-column">Quantity</th>
+                    <th class="subtotal-column">Subtotal</th>
+                    <th class="remove-column"></th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+              </table>
+            </div>
+            <button class="btn btn-primary" onclick="clearCart()">Clear Cart</button>
+            <span id="item-total"></span>
+          </div>
+          <div class="modal-footer">
+            <p id="total-cart">
+              <span id="cart-total"></span>
+            </p>
+            <button type="button" class="btn btn-primary" onclick="openCheckoutModal()">Check Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="item-added">
+      <p id="added-confirmation"></p>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="checkoutModalLabel">Checkout Form</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe id="checkoutFrame" src="checkoutform/checkout_form.php" width="100%" height="500px" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Office and School Laptops -->
+    <h2 id="officelaptops" class="laptops">Office/School Laptops</h2>
+    <section>
+      <div class="product">
+        <img src="products/lenovoThinkPadX1CarbonGen10_1.png" alt="LAPTOP 1">
+        <div id="product-name">
+          <h2>Lenovo ThinkPad X1 Carbon Gen 10</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+						<li>CPU: Intel Core i7-1260Ps</li>
+						<li>GPU: Intel UHD Graphics</li>
+						<li>RAM: 16GB DDR5-5200</li>
+						<li>Screen: 14-inch 1200 @ 60Hz</li>
+						<li>Storage: 512GB PCIe SSD</li>
+						<li>Battery: 57 Whr</li>
+						<li>Dimensions: 0.6 by 12.4 by 8.8 inches</li>
+						<li>Weight: 2.48 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 72,995</p>
+        <button onclick="addToCart('Lenovo ThinkPad X1 Carbon Gen 10', 'ltpx1cg10', 72995)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/dellXPS15_1.jpg" alt="LAPTOP 2">
+        <div id="product-name">
+          <h2>Dell XPS 15</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i5 13500H</li>
+						  <li>GPU: Intel Arc 3 A370M 4GB</li>
+						  <li>RAM: 8GB</li>
+						  <li>Screen: 15.6-inch 2160 @ 60Hz</li>
+						  <li>Storage: 512 GB SSD</li>
+						  <li>Battery: 86 Whr</li>
+						  <li>Dimensions: 13.57 x 9.06 x 0.71 inches</li>
+						  <li>Weight: 4.1 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 79,990</p>
+        <button onclick="addToCart('Dell XPS 15', 'dxps15', 79990)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/hpEliteDragonflyG3_1.jpg" alt="LAPTOP 3">
+        <div id="product-name">
+          <h2>HP Elite Dragonfly G3</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel® Core™ i7-1255U</li>
+						<li>GPU: Integrated, Intel® Iris® Xᵉ Graphics</li>
+						<li>RAM: 16 GB LPDDR5</li>
+						<li>Screen: 13.5-inch 1280 @ 60Hz</li>
+						<li>Storage: 512 GB PCIe® NVMe SSD</li>
+						<li>Battery: 45.6 Whr</li>
+						<li>Dimensions: 0.64 by 11.7 by 8.7 inches</li>
+						<li>Weight: 2.2 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 100,825</p>
+        <button onclick="addToCart('HP Elite Dragonfly G3', 'hpdg3', 100825)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/lenovoIdeaPadFlex5i14-Inch(2022)_1.jpg" alt="LAPTOP 4">
+        <div id="product-name">
+          <h2>Lenovo IdeaPad Flex 5i 14-Inch (2022)</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel i3-1115G4</li>
+						  <li>GPU: Integrated Intel UHD Graphics</li>
+						  <li>RAM: 4GB DDR4</li>
+						  <li>Screen: 14 inches IPS 1920 x 1200 60Hz</li>
+					  	<li>Storage: 256GB PCIe m.2 SSD</li>
+						  <li>Battery: 52.5 Whr</li>
+						  <li>Dimensions: 12.65 x 8.56 x 0.83 inches</li>
+					  	<li>Weight: 3.3 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 24,760</p>
+        <button onclick="addToCart('Lenovo IdeaPad Flex 5i 14-Inch (2022)', 'lif5i14i2022', 24760)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/microsoftSurfaceLaptopGo2_1.png" alt="LAPTOP 5">
+        <div id="product-name">
+          <h2>Microsoft Surface Laptop Go 2</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i5-1135G7</li>
+					  	<li>GPU: Intel Iris Xe</li>
+					  	<li>RAM: 8GB</li>
+						  <li>Screen: 12.4 inches 1536 x 1024 @ 60Hz</li>
+						  <li>Storage: 256GB PCIe SSD</li>
+					  	<li>Battery: 41 Whr</li>
+					  	<li>Dimensions: 0.62 by 10.95 by 8.12 inches</li>
+						  <li>Weight: 2.48 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 22,989</p>
+        <button onclick="addToCart('Microsoft Surface Laptop Go 2', 'mslg2', 22989)">Add to Cart</button>
+      </div>
+    </section>
+    <!-- Gaming Laptops -->
+    <h2 id="gaminglaptops" class="laptops">Gaming Laptops</h2>
+    <section>
+      <div class="product">
+        <img src="products/lenovoLegionPro7i(Gen8)_1.jpg" alt="LAPTOP 1">
+        <div id="product-name">
+          <h2>Lenovo Legion Pro 7i (Gen8)</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Up to Core i9 13900HX</li>
+              <li>GPU: Intel UHD Graphics</li>
+              <li>RAM: 16GB DDR5-5200</li>
+              <li>Screen: 14-inch 1200 @ 60Hz</li>
+              <li>Storage: 512GB PCIe SSD</li>
+              <li>Battery: 57 Whr</li>
+              <li>Dimensions: 0.6 by 12.4 by 8.8 inches</li>
+              <li>Weight: 2.48 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 198,000</p>
+        <button onclick="addToCart('Lenovo Legion Pro 7i (Gen8)', 'llp7i', 198000)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/razerBlade15_1.jpg" alt="LAPTOP 2">
+        <div id="product-name">
+          <h2>Razer Blade 15</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Up to Core i9 13800H</li>
+              <li>GPU: Up to RTX 4070</li>
+              <li>RAM: Up to 32GB DDR5Screen: 1080p @ 360H or 1440p @ 240Hz</li>
+              <li>Storage: Up to 1TB SSD</li>
+              <li>Battery: 80 Whr</li>
+              <li>Dimensions: 9.25 x 13.98 x 0.67 inches</li>
+              <li>Weight: 4.40 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 344,392</p>
+        <button onclick="addToCart('Razer Blade 15', 'rb15', 344392)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/asusROGZephyrusG14(2022)_1.png" alt="LAPTOP 3">
+        <div id="product-name">
+          <h2>Asus ROG Zephyrus G14 (2022)</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i7-1260Ps</li>
+              <li>GPU: Intel UHD Graphics</li>
+              <li>RAM: 16GB DDR5-5200</li>
+              <li>Screen: 14-inch 1200 @ 60Hz</li>
+              <li>Storage: 512GB PCIe SSD</li>
+              <li>Battery: 57 Whr</li>
+              <li>Dimensions: 0.6 by 12.4 by 8.8 inches</li>
+              <li>Weight: 2.48 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 149,995</p>
+        <button onclick="addToCart('Asus ROG Zephyrus G14 (2022)', 'arogzg14', 149995)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/asusROGZephyrusM16(2023)_2.jpg" alt="LAPTOP 4">
+        <div id="product-name">
+          <h2>Asus ROG Zephyrus M16 (2023)</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Up to Core i9 13900H</li>
+						  <li>GPU: RTX 4090, RTX 4080, or RTX 4070</li>
+					    <li>RAM: 32GB DDR5-4800</li>
+						  <li>Screen: 16-inch 2560 x 1600, 16:10 aspect ratio</li>
+						  <li>Storage: Up to 2TB M.2 PCIe 4.0 NVMe M.2 SSD</li>
+						  <li>Battery: 90 Whr</li>
+						  <li>Dimensions: 11.7 x 15.64 x 0.78–0.90 inches</li>
+						  <li>Weight: 4.63–5.07 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 339,995</p>
+        <button onclick="addToCart('Asus ROG Zephyrus M16 (2023)', 'arogzm162023', 339995)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/asusROGStrixScar17(2023)_1.jpg" alt="LAPTOP 5">
+        <div id="product-name">
+          <h2>Asus ROG Strix Scar 17 (2023)</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: AMD Ryzen 9 7945HX</li>
+              <li>GPU: Up to Nvidia RTX 4090</li>
+              <li>RAM: Up to 32GB DDR5-4800</li>
+              <li>Screen: 17.3-inch 1440p @ 240Hz</li>
+              <li>Storage: Up to 2TB M.2 PCIe 4.0 NVMe M.2 SSD</li>
+              <li>Battery: 90 Whr</li>
+              <li>Dimensions: 15.55 x 11.10 x 0.92 inches</li>
+              <li>Weight: 6.61 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 279,129</p>
+        <button onclick="addToCart('Asus ROG Strix Scar 17 (2023)', 'arogss17', 279129)">Add to Cart</button>
+      </div>
+    </section>
+    <!-- Workstation Laptops -->
+    <h2 id="workstationlaptops" class="laptops">Workstation Laptops</h2>
+    <section>
+      <div class="product">
+        <img src="products/hpZBookFury17G8_1.jpg" alt="LAPTOP 1">
+        <div id="product-name">
+          <h2>HP ZBook Fury 17 G8</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i9-11950H</li>
+					   	<li>GPU: NVIDIA RTX A3000 Laptop GPU</li>
+					  	<li>RAM: 128 GB</li>
+					  	<li>Screen: 17.30 inch 16:9, 3840 x 2160 @60Hz</li>
+					  	<li>Storage: 1024 GB</li>
+				  		<li>Battery: 94 Whr</li>
+				  		<li>Dimensions: 1.06 x 15.67 x 10.51 inches</li>
+				  		<li>Weight: 6.45 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 275,700</p>
+        <button onclick="addToCart('HP ZBook Fury 17 G8', 'hpzf17g8', 275700)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/msiKatana15_1.jpg" alt="LAPTOP 2">
+        <div id="product-name">
+          <h2>MSI Katana 15</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i9 13900H</li>
+						  <li>GPU: GeForce RTX 4070 Mobile 8GB</li>
+						  <li>RAM: 64GB</li>
+						  <li>Screen: 15.6-inch 1920 x 1080 @ 144Hz</li>
+					  	<li>Storage: 2048GB</li>
+					  	<li>Battery: 53.5 Whr</li>
+					  	<li>Dimensions: 14.13 x 10.2 x 0.98 inches</li>
+						  <li>Weight: 4.96 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 132,100</p>
+        <button onclick="addToCart('MSI Katana 15', 'msik15', 132100)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/msiCreatorProX17_1.jpg" alt="LAPTOP 3">
+        <div id="product-name">
+          <h2>MSI CreatorPro X17</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i9-12900HX</li>
+              <li>GPU: Nvidia RTX A5500</li>
+              <li>RAM: 64GB</li>
+              <li>Screen: 17.3 inches 3840 x 2160 @ 120Hz</li>
+              <li>Storage: 2 TB SSD</li>
+              <li>Battery: 99.o Whr</li>
+              <li>Dimensions: 0.91 by 15.63 by 12.99 inches</li>
+              <li>Weight: 6.82 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 246,439</p>
+        <button onclick="addToCart('MSI CreatorPro X17', 'msicx17', 246439)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/dellPrecision5470_1.jpg" alt="LAPTOP 4">
+        <div id="product-name">
+          <h2>Dell Precision 5470</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i9-12900H</li>
+						  <li>GPU: Nvidia RTX A1000</li>
+						  <li>RAM: 32GB</li>
+						  <li>Screen: 14inches 2560 x 1600 @ 60 Hz</li>
+						  <li>Storage: 1TB</li>
+					  	<li>Battery: 62 Whr</li>
+						  <li>Dimensions: 0.74 by 12.2 by 8.3 inches</li>
+						  <li>Weight: 3.26 lbs</li>
+              </ul>
+          </div>
+        </div>
+        <p>Price: Php 106,760</p>
+        <button onclick="addToCart('Dell Precision 5470', 'dp5470', 106760)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="products/hpZBookStudioG9_1.jpg" alt="LAPTOP 5">
+        <div id="product-name">
+          <h2>HP ZBook Studio G9</h2>
+        </div>
+        <div class="dropdown">
+          <span>Hover here to see Specifications</span>
+          <div class="dropdown-content" id="dropdown">
+            <ul>
+              <span class="hover-text">
+                <strong>SPECIFICATIONS</strong>
+              </span>
+              <li></li>
+              <li>CPU: Intel Core i9-12900H</li>
+						  <li>GPU: Nvidia GeForce RTX 3080 Ti</li>
+						  <li>RAM: 64GB</li>
+					  	<li>Screen: 16-inches, 3840 x 2400 @ 120 Hz</li>
+						  <li>Storage: 2TB SSD</li>
+						  <li>Battery: 86 Whr</li>
+					  	<li>Dimensions: 0.76 by 14 by 9.5 inches</li>
+					  	<li>Weight: 3.81 lbs</li>
+            </ul>
+          </div>
+        </div>
+        <p>Price: Php 225,715</p>
+        <button onclick="addToCart('HP ZBook Studio G9', 'hpzsg9', 225715)">Add to Cart</button>
+      </div>
+    </section>
+    <!-- scripts -->
+    <script src="bootstrap 5.3/bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart.js"></script>
+  </body>
+</html>
